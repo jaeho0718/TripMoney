@@ -7,18 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A6913E0827C9B4C100C88735 /* CostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6913E0727C9B4C100C88735 /* CostCell.swift */; };
+		A6913E0A27C9BB8B00C88735 /* SystemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6913E0927C9BB8B00C88735 /* SystemData.swift */; };
+		A6913E0C27C9BD1100C88735 /* EventList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6913E0B27C9BD1100C88735 /* EventList.swift */; };
+		A6A83B5C27C9AC5000639468 /* CostEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A83B5B27C9AC5000639468 /* CostEditor.swift */; };
 		A6BC3DFD27C998BF00D7D600 /* TripMoneyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */; };
 		A6BC3DFF27C998BF00D7D600 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3DFE27C998BF00D7D600 /* ContentView.swift */; };
 		A6BC3E0127C998BF00D7D600 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6BC3E0027C998BF00D7D600 /* Assets.xcassets */; };
 		A6BC3E0427C998BF00D7D600 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A6BC3E0327C998BF00D7D600 /* Preview Assets.xcassets */; };
+		A6BC3E0B27C999F600D7D600 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E0A27C999F600D7D600 /* EventModel.swift */; };
+		A6BC3E0D27C99A0C00D7D600 /* CostModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */; };
+		A6BC3E0F27C99BB500D7D600 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E0E27C99BB400D7D600 /* DataStore.swift */; };
+		A6BC3E1327C99E4100D7D600 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E1227C99E4100D7D600 /* EventCell.swift */; };
+		A6BC3E1527C9A64100D7D600 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E1427C9A64100D7D600 /* EventView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A6913E0727C9B4C100C88735 /* CostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCell.swift; sourceTree = "<group>"; };
+		A6913E0927C9BB8B00C88735 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
+		A6913E0B27C9BD1100C88735 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		A6A83B5B27C9AC5000639468 /* CostEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostEditor.swift; sourceTree = "<group>"; };
 		A6BC3DF927C998BF00D7D600 /* TripMoney.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripMoney.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMoneyApp.swift; sourceTree = "<group>"; };
 		A6BC3DFE27C998BF00D7D600 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A6BC3E0027C998BF00D7D600 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A6BC3E0327C998BF00D7D600 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		A6BC3E0A27C999F600D7D600 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostModel.swift; sourceTree = "<group>"; };
+		A6BC3E0E27C99BB400D7D600 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
+		A6BC3E1227C99E4100D7D600 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
+		A6BC3E1427C9A64100D7D600 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +71,15 @@
 			children = (
 				A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */,
 				A6BC3DFE27C998BF00D7D600 /* ContentView.swift */,
+				A6BC3E1427C9A64100D7D600 /* EventView.swift */,
+				A6913E0B27C9BD1100C88735 /* EventList.swift */,
+				A6913E0727C9B4C100C88735 /* CostCell.swift */,
+				A6A83B5B27C9AC5000639468 /* CostEditor.swift */,
+				A6BC3E0A27C999F600D7D600 /* EventModel.swift */,
+				A6BC3E1227C99E4100D7D600 /* EventCell.swift */,
+				A6BC3E0E27C99BB400D7D600 /* DataStore.swift */,
+				A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */,
+				A6913E0927C9BB8B00C88735 /* SystemData.swift */,
 				A6BC3E0027C998BF00D7D600 /* Assets.xcassets */,
 				A6BC3E0227C998BF00D7D600 /* Preview Content */,
 			);
@@ -137,8 +164,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6913E0A27C9BB8B00C88735 /* SystemData.swift in Sources */,
+				A6BC3E0D27C99A0C00D7D600 /* CostModel.swift in Sources */,
 				A6BC3DFF27C998BF00D7D600 /* ContentView.swift in Sources */,
 				A6BC3DFD27C998BF00D7D600 /* TripMoneyApp.swift in Sources */,
+				A6913E0827C9B4C100C88735 /* CostCell.swift in Sources */,
+				A6A83B5C27C9AC5000639468 /* CostEditor.swift in Sources */,
+				A6BC3E0F27C99BB500D7D600 /* DataStore.swift in Sources */,
+				A6BC3E0B27C999F600D7D600 /* EventModel.swift in Sources */,
+				A6BC3E1327C99E4100D7D600 /* EventCell.swift in Sources */,
+				A6BC3E1527C9A64100D7D600 /* EventView.swift in Sources */,
+				A6913E0C27C9BD1100C88735 /* EventList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,8 +311,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -286,7 +323,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -304,8 +341,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -315,7 +353,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

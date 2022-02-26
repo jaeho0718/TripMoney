@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    @StateObject var store = DataStore()
+    @StateObject var system = SystemData()
+    @State private var search: String = ""
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            EventList()
+                .navigationTitle(Text("이벤트"))
+        }
+            .fullScreenCover(item: $system.sheet, content: { sheet in
+                switch sheet {
+                case .event(let event):
+                    EventView(event: event)
+                }
+            })
+            .environmentObject(store)
+            .environmentObject(system)
     }
 }
 
