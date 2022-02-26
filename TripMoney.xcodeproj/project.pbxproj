@@ -50,6 +50,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A6913E0D27C9EE3700C88735 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A6BC3DFE27C998BF00D7D600 /* ContentView.swift */,
+				A6BC3E1427C9A64100D7D600 /* EventView.swift */,
+				A6913E0727C9B4C100C88735 /* CostCell.swift */,
+				A6913E0B27C9BD1100C88735 /* EventList.swift */,
+				A6A83B5B27C9AC5000639468 /* CostEditor.swift */,
+				A6BC3E1227C99E4100D7D600 /* EventCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A6913E0E27C9EE6800C88735 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A6BC3E0A27C999F600D7D600 /* EventModel.swift */,
+				A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A6913E0F27C9EE7A00C88735 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A6913E0927C9BB8B00C88735 /* SystemData.swift */,
+				A6BC3E0E27C99BB400D7D600 /* DataStore.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		A6BC3DF027C998BF00D7D600 = {
 			isa = PBXGroup;
 			children = (
@@ -70,16 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */,
-				A6BC3DFE27C998BF00D7D600 /* ContentView.swift */,
-				A6BC3E1427C9A64100D7D600 /* EventView.swift */,
-				A6913E0B27C9BD1100C88735 /* EventList.swift */,
-				A6913E0727C9B4C100C88735 /* CostCell.swift */,
-				A6A83B5B27C9AC5000639468 /* CostEditor.swift */,
-				A6BC3E0A27C999F600D7D600 /* EventModel.swift */,
-				A6BC3E1227C99E4100D7D600 /* EventCell.swift */,
-				A6BC3E0E27C99BB400D7D600 /* DataStore.swift */,
-				A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */,
-				A6913E0927C9BB8B00C88735 /* SystemData.swift */,
+				A6913E0E27C9EE6800C88735 /* Model */,
+				A6913E0D27C9EE3700C88735 /* View */,
+				A6913E0F27C9EE7A00C88735 /* ViewModel */,
 				A6BC3E0027C998BF00D7D600 /* Assets.xcassets */,
 				A6BC3E0227C998BF00D7D600 /* Preview Content */,
 			);
