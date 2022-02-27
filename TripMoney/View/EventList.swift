@@ -13,16 +13,17 @@ struct EventList: View {
     @FocusState private var onAdding: Bool
 
     var body: some View {
-        ScrollView {
-            LazyVStack {
-                ForEach($store.events) { $event in
-                    EventCell(event: $event)
-                        .padding(.horizontal, 15)
-                        .transition(AnyTransition.asymmetric(insertion: .move(edge: .bottom),
-                                                             removal: .move(edge: .leading)))
-                }
+        List {
+            ForEach($store.events) { $event in
+                EventCell(event: $event)
+                    .padding(.horizontal, 15)
+                    .listRowInsets(EdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0))
+                    .listRowSeparator(.hidden)
             }
+            .onDelete(perform: {store.events.remove(atOffsets: $0)})
+            .onMove(perform: {store.events.move(fromOffsets: $0, toOffset: $1)})
         }
+        .listStyle(.plain)
         .navigationViewStyle(.stack)
         .safeAreaInset(edge: .bottom) {
             HStack {

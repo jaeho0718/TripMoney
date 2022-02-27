@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class DataStore: ObservableObject {
     @Published var events = [Event]()
     let encoder = JSONEncoder()
@@ -34,7 +35,7 @@ class DataStore: ObservableObject {
         self.events = result
     }
 
-    private func toLocal() throws {
+    func toLocal() throws {
         let data = try encoder.encode(events)
         guard let documentDirectoryURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {fatalError("No URL")}
         let fileURL = documentDirectoryURL.appendingPathComponent("events.json")

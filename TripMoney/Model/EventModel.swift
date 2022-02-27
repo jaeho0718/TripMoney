@@ -13,40 +13,49 @@ struct Event: Identifiable, Codable {
         self.id = UUID()
         self.title = title
         self.costs = costs
-        self.people = 1
+        self.peoples = []
     }
 
     init(title: String) {
         self.id = UUID()
         self.title = title
         self.costs = [Cost]()
-        self.people = 1
+        self.peoples = []
     }
 
     var id: UUID
     var title: String
-    var people: Int
+    var peoples: [People]
     var costs: [Cost]
     
     func totalCost() -> Int {
         self.costs.reduce(0) {$0 + $1.cost}
     }
 
-    func individualCost() -> CostResult {
-        let averageCost = costs.reduce(0) {$0 + $1.cost}/people
-        let remaining = costs.reduce(0) {$0 + $1.cost}-averageCost*people
-        if people > 1 && averageCost != averageCost+remaining {
-            return CostResult(averageCost: averageCost, averageCount: people-1, remainingCost: remaining+averageCost, remainingCount: 1)
-        } else {
-            return CostResult(averageCost: averageCost, averageCount: people, remainingCost: 0, remainingCount: 0)
+    func individualCost() -> [CostResult] {
+        var result = [CostResult]()
+        for cost in costs {
+            let averageCost = cost.cost/cost.peoples.count
+            let remaining = cost.cost - averageCost*cost.peoples.count
+            guard let randomPeople = cost.peoples.randomElement() else { return []}
+            for people in cost.peoples {
+                if let index = result.firstIndex(where: {$0.people.id == people.id}) {
+                    result[index].costs.append(Cost(title: cost.title,
+                                                    cost: randomPeople == people ? averageCost + remaining : averageCost))
+                } else {
+                    result.append(CostResult(people: people,
+                                             costs: [Cost(title: cost.title,
+                                                          cost: randomPeople == people ? averageCost + remaining : averageCost)]))
+                }
+            }
         }
+        return result
     }
 
-    struct CostResult {
-        var averageCost: Int
-        var averageCount: Int
-        var remainingCost: Int
-        var remainingCount: Int
+    struct CostResult: Identifiable {
+        var id: UUID { people.id }
+        var people: People
+        var costs: [Cost]
     }
 }
 

@@ -9,6 +9,7 @@ import SwiftUI
 
 class SystemData: ObservableObject {
     @Published var sheet: SheetStyle?
+    @Published var scenePhase: ScenePhase?
 
     enum SheetStyle: Identifiable {
         case event(Event)

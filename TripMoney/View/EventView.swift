@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct EventView: View {
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var store: DataStore
     @EnvironmentObject var system: SystemData
     @State private var event: Event
@@ -19,27 +20,25 @@ struct EventView: View {
     var body: some View {
         NavigationView {
             List {
-                HStack {
-                    Text("총 \(String(event.people)) 명")
-                        .font(.body.weight(.semibold))
-                        .padding(.trailing)
-                    Slider(value: Binding<Float>(get: {Float(event.people)},
-                                                 set: {event.people = Int($0)}),
-                           in: 1...20)
-                        .tint(.primary)
-                }
-                .padding(.vertical, 5)
-                .listRowSeparator(.hidden)
-                .listRowInsets(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                .listRowBackground(Color.clear)
+                PeopleEditor(event: $event)
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets(top: 5, leading: 2, bottom: 5, trailing: 5))
+                    .listRowBackground(Color.clear)
                 Section {
                     if event.costs.isEmpty {
                         Text("비용을 추가해주세요.")
                             .font(.body)
                             .foregroundColor(.secondary)
                     } else {
-                        ForEach(event.costs) { cost in
-                            CostCell(cost: cost)
+                        ForEach($event.costs) { $cost in
+                            NavigationLink(destination: {
+                                CostPeopleList(peoples: event.peoples, cost: $cost)
+                                    .onDisappear {
+                                        store.update(event)
+                                    }
+                            }) {
+                                CostCell(cost: cost)
+                            }
                         }
                         .onDelete(perform: {event.costs.remove(atOffsets: $0)})
                         .onMove(perform: {(indexSet, destination) in
@@ -60,18 +59,11 @@ struct EventView: View {
             .navigationTitle(Text(event.title))
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button(action: {
-                        system.sheet = nil
-                    }) {
+                    Button(action: {system.sheet = nil}) {
                         Image(systemName: "xmark")
                             .imageScale(.medium)
                     }
                     .tint(.primary)
-                }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
-                        .tint(.blue)
-                        .disabled(event.costs.isEmpty)
                 }
             }
         }
@@ -81,7 +73,11 @@ struct EventView: View {
         .onDisappear {
             store.update(event)
         }
-        .onChange(of: event.people, perform: {_ in store.update(event)})
+        .onChange(of: system.scenePhase, perform: { value in
+            if value != .active {
+                store.update(event)
+            }
+        })
     }
 }
 

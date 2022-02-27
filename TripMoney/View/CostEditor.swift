@@ -13,6 +13,7 @@ struct CostEditor: View {
     @Namespace var transition
     @Binding var event: Event
     @State private var showEditor: Bool = false
+    @State private var showResult: Bool = false
     @State private var cost = Cost()
     @FocusState private var keyboard: Keyboard?
     enum Keyboard {
@@ -23,25 +24,23 @@ struct CostEditor: View {
         VStack(spacing: 0) {
             Divider()
             HStack {
-                if showEditor {
-                    Text("비용 편집기")
-                        .font(.body.weight(.semibold))
-                        .frame(width: 300, height: 40, alignment: .leading)
-                        .matchedGeometryEffect(id: "bottomTitle", in: transition)
-                } else {
-                    ScrollView(.horizontal, showsIndicators: false) {
-                        HStack {
-                            Text("\(event.individualCost().averageCount) 명이 \(event.individualCost().averageCost) 원")
-                            if event.individualCost().remainingCount != 0 {
-                                Text("\(event.individualCost().remainingCount) 명이 \(event.individualCost().remainingCost) 원")
-                            }
+                Group {
+                    if showEditor {
+                        Text("비용 편집기")
+                            .font(.body.weight(.semibold))
+                            .matchedGeometryEffect(id: "bottomTitle", in: transition)
+                    } else {
+                        Button(action: {showResult.toggle()}) {
+                            Text("정산")
+                                .font(.caption)
                         }
-                    }
-                        .font(.body.weight(.semibold))
-                        .lineLimit(1)
-                        .frame(width: 300, height: 40, alignment: .leading)
+                        .buttonStyle(.borderedProminent)
+                        .tint(.blue)
+                        .disabled(event.costs.isEmpty || event.peoples.isEmpty)
                         .matchedGeometryEffect(id: "bottomTitle", in: transition)
+                    }
                 }
+                .frame(height: 40)
                 Spacer()
                 Button(action: {
                     withAnimation(.easeIn) {
@@ -76,6 +75,7 @@ struct CostEditor: View {
                             }
                         }
                     Button(action: {
+                        cost.peoples = event.peoples
                         event.costs.append(cost)
                         store.update(event)
                         withAnimation(.easeIn) {
@@ -98,6 +98,9 @@ struct CostEditor: View {
             }
         }
         .background(.background)
+        .sheet(isPresented: $showResult, content: {
+            ResultView(event: $event)
+        })
     }
 }
 

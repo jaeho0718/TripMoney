@@ -8,14 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject var store = DataStore()
-    @StateObject var system = SystemData()
+    @EnvironmentObject var store: DataStore
+    @EnvironmentObject var system: SystemData
     @State private var search: String = ""
 
     var body: some View {
         NavigationView {
             EventList()
                 .navigationTitle(Text("이벤트"))
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        EditButton()
+                            .tint(.secondary)
+                    }
+                }
         }
             .fullScreenCover(item: $system.sheet, content: { sheet in
                 switch sheet {
@@ -23,13 +29,13 @@ struct ContentView: View {
                     EventView(event: event)
                 }
             })
-            .environmentObject(store)
-            .environmentObject(system)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(SystemData())
+            .environmentObject(DataStore(true))
     }
 }

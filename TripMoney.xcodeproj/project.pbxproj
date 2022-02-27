@@ -20,12 +20,17 @@
 		A6BC3E0F27C99BB500D7D600 /* DataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E0E27C99BB400D7D600 /* DataStore.swift */; };
 		A6BC3E1327C99E4100D7D600 /* EventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E1227C99E4100D7D600 /* EventCell.swift */; };
 		A6BC3E1527C9A64100D7D600 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BC3E1427C9A64100D7D600 /* EventView.swift */; };
+		A6FDBB2327CAEF2E008F9A48 /* PeopleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBB2227CAEF2E008F9A48 /* PeopleModel.swift */; };
+		A6FDBB2527CAF202008F9A48 /* PeopleEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBB2427CAF202008F9A48 /* PeopleEditor.swift */; };
+		A6FDBB2727CAFC16008F9A48 /* CostPeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBB2627CAFC16008F9A48 /* CostPeopleList.swift */; };
+		A6FDBB2927CB1A51008F9A48 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6FDBB2827CB1A51008F9A48 /* ResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A6913E0727C9B4C100C88735 /* CostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostCell.swift; sourceTree = "<group>"; };
 		A6913E0927C9BB8B00C88735 /* SystemData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemData.swift; sourceTree = "<group>"; };
 		A6913E0B27C9BD1100C88735 /* EventList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventList.swift; sourceTree = "<group>"; };
+		A6913E1027C9F6EE00C88735 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		A6A83B5B27C9AC5000639468 /* CostEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostEditor.swift; sourceTree = "<group>"; };
 		A6BC3DF927C998BF00D7D600 /* 너는 얼마?.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "너는 얼마?.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripMoneyApp.swift; sourceTree = "<group>"; };
@@ -37,6 +42,10 @@
 		A6BC3E0E27C99BB400D7D600 /* DataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStore.swift; sourceTree = "<group>"; };
 		A6BC3E1227C99E4100D7D600 /* EventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCell.swift; sourceTree = "<group>"; };
 		A6BC3E1427C9A64100D7D600 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
+		A6FDBB2227CAEF2E008F9A48 /* PeopleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleModel.swift; sourceTree = "<group>"; };
+		A6FDBB2427CAF202008F9A48 /* PeopleEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleEditor.swift; sourceTree = "<group>"; };
+		A6FDBB2627CAFC16008F9A48 /* CostPeopleList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostPeopleList.swift; sourceTree = "<group>"; };
+		A6FDBB2827CB1A51008F9A48 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +64,13 @@
 			children = (
 				A6BC3DFE27C998BF00D7D600 /* ContentView.swift */,
 				A6BC3E1427C9A64100D7D600 /* EventView.swift */,
+				A6FDBB2627CAFC16008F9A48 /* CostPeopleList.swift */,
 				A6913E0727C9B4C100C88735 /* CostCell.swift */,
 				A6913E0B27C9BD1100C88735 /* EventList.swift */,
 				A6A83B5B27C9AC5000639468 /* CostEditor.swift */,
+				A6FDBB2427CAF202008F9A48 /* PeopleEditor.swift */,
 				A6BC3E1227C99E4100D7D600 /* EventCell.swift */,
+				A6FDBB2827CB1A51008F9A48 /* ResultView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -68,6 +80,7 @@
 			children = (
 				A6BC3E0A27C999F600D7D600 /* EventModel.swift */,
 				A6BC3E0C27C99A0C00D7D600 /* CostModel.swift */,
+				A6FDBB2227CAEF2E008F9A48 /* PeopleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -100,6 +113,7 @@
 		A6BC3DFB27C998BF00D7D600 /* TripMoney */ = {
 			isa = PBXGroup;
 			children = (
+				A6913E1027C9F6EE00C88735 /* Info.plist */,
 				A6BC3DFC27C998BF00D7D600 /* TripMoneyApp.swift */,
 				A6913E0E27C9EE6800C88735 /* Model */,
 				A6913E0D27C9EE3700C88735 /* View */,
@@ -188,7 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6FDBB2527CAF202008F9A48 /* PeopleEditor.swift in Sources */,
 				A6913E0A27C9BB8B00C88735 /* SystemData.swift in Sources */,
+				A6FDBB2927CB1A51008F9A48 /* ResultView.swift in Sources */,
 				A6BC3E0D27C99A0C00D7D600 /* CostModel.swift in Sources */,
 				A6BC3DFF27C998BF00D7D600 /* ContentView.swift in Sources */,
 				A6BC3DFD27C998BF00D7D600 /* TripMoneyApp.swift in Sources */,
@@ -198,7 +214,9 @@
 				A6BC3E0B27C999F600D7D600 /* EventModel.swift in Sources */,
 				A6BC3E1327C99E4100D7D600 /* EventCell.swift in Sources */,
 				A6BC3E1527C9A64100D7D600 /* EventView.swift in Sources */,
+				A6FDBB2327CAEF2E008F9A48 /* PeopleModel.swift in Sources */,
 				A6913E0C27C9BD1100C88735 /* EventList.swift in Sources */,
+				A6FDBB2727CAFC16008F9A48 /* CostPeopleList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,11 +345,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TripMoney/Preview Content\"";
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TripMoney;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -358,11 +378,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"TripMoney/Preview Content\"";
 				DEVELOPMENT_TEAM = 88DQM3PTQR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = TripMoney/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = TripMoney;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

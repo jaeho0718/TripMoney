@@ -13,17 +13,20 @@ struct Cost: Identifiable, Codable {
         self.id = UUID()
         self.title = title
         self.cost = cost
+        self.peoples = []
     }
 
     init() {
         self.id = UUID()
         self.title = ""
         self.cost = .zero
+        self.peoples = []
     }
 
     var id: UUID
     var title: String
     var cost: Int
+    var peoples: [People]
 }
 
 // MARK: - 예제
